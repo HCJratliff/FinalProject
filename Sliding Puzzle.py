@@ -1,4 +1,7 @@
-import pygame, sys, os, random
+import pygame
+import sys
+import os
+import random
 
 class SlidePuzzle:
     def __init__(self, gs, ts, ms):
@@ -96,7 +99,7 @@ def main():
     # creates environmental dictionary for mapping purposes
     pygame.display.set_caption('Slide Puzzle')
     # Setting caption for game
-    screen = pygame.display.set_mode((800,800))
+    screen = pygame.display.set_mode((800, 800))
     # Setting size of Screen
     fps_clock = pygame.time.Clock()
     program = SlidePuzzle((4, 4), 160, 10)
