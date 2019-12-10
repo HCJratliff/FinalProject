@@ -3,11 +3,12 @@ import sys
 import os
 import random
 
+
 class SlidePuzzle:
     def __init__(self, gs, ts, ms):
         self.gs, self.ts, self.ms = gs, ts, ms
         # gs is in the form (n, m) and refers to number of rows and columns respectively
-        # ts refers to text size in the game
+        # ts refers to tile features/size in the game
         # ms refers to margin size (i.e. space between tiles)
         self.tiles = [(x, y) for x in range(gs[0]) for y in range(gs[1])]
         # Setting the number of each tile in columns and rows the array
@@ -42,7 +43,8 @@ class SlidePuzzle:
 
     def set_as_blank(self):
         return self.tiles[-1]
-    def getblank(self,pos):
+
+    def getblank(self, pos):
         self.tiles[-1] = pos
     open_tile = property(set_as_blank, getblank)
     # sets open_tile as blank
@@ -102,7 +104,7 @@ def main():
     screen = pygame.display.set_mode((800, 800))
     # Setting size of Screen
     fps_clock = pygame.time.Clock()
-    program = SlidePuzzle((4, 4), 160, 10)
+    program = SlidePuzzle((4, 4), 150, 5)
     # determines dimensions and other arguments of slide puzzle
 
     while True:
